@@ -1,0 +1,13 @@
+{% block body %}
+
+<h1>Bei diesem Projekt wird jeder "Person" in der Datenbank</h1>
+<h1>eine eigene URL erzeugt.</h1>
+<h1>Weiterhin kann man weitere hinzufügen -->  <a href="{% url 'people:person_add' %}"> Hier! </a></h1>
+<h1>Man wird sofort zu dieser neuen Seite geleitet.</h1>
+<h1>Mit der Admin-App --> </h1>
+<h1>Kann man die Datenbank beliebig manipulieren --><a href="/admin"> Hier! </a></h1>
+<h1>Ein erster Admin wurde bereitgestellt</h1>
+<h1>BN: Admin</h1>
+<h1>PW: PW1234</h1>
+
+{% endblock %}

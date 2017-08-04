@@ -1,0 +1,26 @@
+
+{% block body%}
+	{% if all_persons %}
+		<h1>Hier sind alle vermerkten Personen</h1>
+		<ul>
+			{% for person in all_persons %}
+			<li><a href="{% url 'people:detail' person.id %}">{{person.name}} , {{person.lastname}}</a></li>
+    {% endfor %}
+		</ul>
+
+	{% else %}
+		<h1> Keine Personen angemeldet, füge doch welche hinzu :)</h1>
+	{% endif %}
+
+<a href="{% url 'people:person_add' %}"> füge Personen hinzu! </a>
+<br>
+<br>
+<br>
+<h1>
+<a href="/admin"> Admin-App! </a></h1>
+Es wurde bereits ein Admin-Account erstellt, mit dem man nun die Datenbank manipulieren kann
+<br>
+BN: Admin
+<br>
+PW: PW123456
+{% endblock %}

@@ -1,0 +1,11 @@
+{% block body %}
+
+	<h1>Vorname :  {{ person.name }} </h1>
+	<h1>Nachname:  {{ person.lastname }}</h1>
+	<h1>Alter   :  {{person.age}}</h1>
+<br>
+<br>
+<a href="{% url 'people:index' %}"> zurück </a>
+
+
+{% endblock %}

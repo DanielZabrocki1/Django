@@ -1,0 +1,18 @@
+
+{% block content %}
+<h1> Füge Person der Datenbank hinzu </h1>
+
+<form method='POST'> {% csrf_token %}
+    <input type='text' name='name' placeholder='Vorname'> <br/>
+    <input type='text' name='lastname' placeholder='Zuname'> <br/>
+    <input type='text' name='age' placeholder='Alter'> <br/>
+    <button type='submit'> Bestätigen </button>
+</form>
+<br>
+<br>
+<br>
+
+<a href="{% url 'people:index' %}"> zurück </a>
+
+
+{% endblock %}
