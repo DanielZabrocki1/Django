@@ -1,6 +1,6 @@
 # Django
 
-1. Installiere Django (Phyton ist dabei vorausgesetzt)
+1. Installiere Django (Die Installation von Phyton3 ist dabei vorausgesetzt)
 2. Öffne die Konsole und betrete das ProjektVerzeichnis  "../myproject" 
 3. führe folgendes aus: "python manage.py runserver"
 4. der Server sollte nun auf dem Port 1:8000 laufen
