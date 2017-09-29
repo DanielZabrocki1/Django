@@ -4,8 +4,37 @@
 	<h1>Nachname:  {{ person.lastname }}</h1>
 	<h1>Alter   :  {{person.age}}</h1>
 <br>
+
+<form action="{% url 'people:update' person.id %}" method="post" style="display: inline;">
+	{% csrf_token %}
+ 	<input type="hidden" name="person_id" value="{{ person.id }} "/>
+	<button type="submit" class="btn btn-default btn-sm" value="Profil bearbeiten"> Profil bearbeiten
+
+	</button>
+</form>
+
+<br>
 <br>
 <a href="{% url 'people:index' %}"> zurück </a>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Delete -->
+<form action="{% url 'people:person_delete' person.id %}" method="post" style="display: inline;">
+	{% csrf_token %}
+ 	<input type="hidden" name="person_id" value="{{ person.id }} "/>
+	<button type="submit" class="btn btn-default btn-sm" value="lösche dieses Profil"> lösche dieses Profil
+
+	</button>
+</form>
+(diese Person wird unwiderruflich von der Datenbank gelöscht)
+<br>
+<br>
+
+<br>
+
 
 
 {% endblock %}

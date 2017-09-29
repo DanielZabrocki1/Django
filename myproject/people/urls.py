@@ -12,6 +12,10 @@ urlpatterns = (
 
     url(r'^add/$', views.PersonCreate.as_view(), name='person_add'),
 
+    url(r'^(?P<pk>[0-9]+)/update/$', views.PersonUpdate.as_view(), name='update'),
+
+    url(r'^(?P<pk>[0-9]+)/delete/$', views.PersonDelete.as_view(), name='person_delete'),
+
     url(r'^info/$', views.info, name='info'),
 
 )

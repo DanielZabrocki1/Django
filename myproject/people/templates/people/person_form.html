@@ -1,12 +1,15 @@
 
 {% block content %}
+{% if person.name %}
+<h1> Verändere die Daten  </h1>
+{% else %}
 <h1> Füge Person der Datenbank hinzu </h1>
-
+{% endif %}
 <form method='POST'> {% csrf_token %}
-    <input type='text' name='name' placeholder='Vorname'> <br/>
-    <input type='text' name='lastname' placeholder='Zuname'> <br/>
-    <input type='text' name='age' placeholder='Alter'> <br/>
-    <button type='submit'> Bestätigen </button>
+    <input type='text' name='name' value="{{ person.name }}" placeholder='Vorname'> <br/><br/>
+    <input type='text' name='lastname' value="{{ person.lastname }}" placeholder='Zuname'> <br/><br/>
+    <input type='text' name='age' value="{{ person.age }}" placeholder='Alter'> <br/><br/>
+    <button type='submit' class="btn btn-success"> Bestätigen </button>
 </form>
 <br>
 <br>
@@ -16,3 +19,4 @@
 
 
 {% endblock %}
+

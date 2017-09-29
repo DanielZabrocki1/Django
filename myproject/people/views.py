@@ -20,6 +20,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Person
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.core.urlresolvers import reverse_lazy
 
 
 class IndexView(generic.ListView):
@@ -36,6 +37,14 @@ class DetailView(generic.DetailView):
 class PersonCreate(CreateView):
     model= Person
     fields=['name','lastname','age']
+
+class PersonUpdate(UpdateView):
+    model= Person
+    fields=['name','lastname','age']
+
+class PersonDelete(DeleteView):
+    model = Person
+    success_url = reverse_lazy('people:index')
 
 def info(request):
     return(request, 'people/info.html')
